@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>初识JSX语法</title>
+</head>
+<body>
+  <div id="reactContainer"></div>
+</body>
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<script src="js/browser.min.js"></script>
+<script type="text/babel">
+/* var HelloComponent =React.createClass({
+  render:function(){
+      return <h1>Hello World</h1>
+  }
+});
+
+ReactDOM.render(
+  <HelloComponent/>,
+  document.getElementById('reactContainer')
+) */
+// JSX是支持表达式的，你只要使用{}括号，就可以使用表达式了
+// 需要注意的是表达式不支持if…else这样的语句，但是支持三元运算符和二元运算符。
+var HelloComponent =React.createClass({
+  render:function(){
+      return <h1>Hello {this.props.name ? this.props.name : 'world'}</h1>
+  }
+});
+
+ReactDOM.render(
+  <HelloComponent name="chencheng"/>,
+  document.getElementById('reactContainer')
+)
+</script>
+</html>
